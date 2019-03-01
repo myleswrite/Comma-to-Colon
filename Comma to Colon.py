@@ -2,11 +2,12 @@
 
 # Comma to Colon
 # A script to turn a CSV file into a Kirby CMS content file.
+# Buy a Kirby CMS licence: https://getkirby.com/buy
 
 def filesafe(filename): # Create a Kirby safe filename
     safename = filename.replace(' ','-')
-    safename = filename.replace('&','-')
-    safename = filename.replace(',','-')
+    safename = safename.replace('&','-')
+    safename = safename.replace(',','-')
     safename = safename.replace("'",'-').lower()
     return safename
 
@@ -41,12 +42,12 @@ with open(filecsv.filename, 'r') as f: # Open the file
     for row in worklist:
         line = ''
         title = row['title'] # title is the one heading that must be present
-        filename = filesafe(title) + '/' + blueprint # Createa Kirby safe folder and use blueprint name
+        filename = filesafe(title) + '/' + blueprint # Create a Kirby safe folder and use blueprint name
         for val,item in row.items():
             line += val + ': ' + item + sep
         fullfile = directory + '/' + filename
         os.makedirs(os.path.dirname(fullfile), exist_ok=True)
-        with open(fullfile,'w+') as sf:
+        with open(fullfile,'w+') as sf: # Write the blueprint file
             sf.write(line)
 print("Finished")
 exit()
