@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Comma to Colon
 # A script to turn a CSV file into a Kirby CMS content file.
 # Try Kirby for free then buy a licence: https://getkirby.com/
@@ -20,7 +19,7 @@ except:
 try: # os required to create the individual folders
     import os
 except:
-    print('Needs OS module')
+    print('OS module is required')
     exit()
 try: # For file dialog
     from tkinter import filedialog
@@ -28,7 +27,6 @@ try: # For file dialog
 except:
     print("tkinter.filedialog is required")
     exit()
-    
 # Open the CSV
 filecsv = Tk()
 filecsv.filename = filedialog.askopenfilename(initialdir = "~/",title = "Select csv file to open",filetypes = (("CSV files","*.csv"),("all files","*.*")))
