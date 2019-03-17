@@ -40,8 +40,12 @@ with open(filecsv.filename, 'r') as f: # Open the file
     worklist = csv.DictReader(f)
     for row in worklist: # Turn each row into a Kirby content txt file
         line = ''
-        title = row['title'] # title is the one heading that must be present
-        filename = filesafe(title) + '/' + blueprint # Create a Kirby safe folder and use blueprint name
+        try:
+            title = row['title'] # title is the one heading that must be present
+            filename = filesafe(title) + '/' + blueprint # Create a Kirby safe folder and use blueprint name
+        except:
+            print("No 'title' item found so stopping. 'title' must be a heading and written in lowercase for the conversion to work.")
+            exit()
         for val,item in row.items():
             line += val + ': ' + item + sep
         fullfile = directory + '/' + filename
