@@ -28,6 +28,7 @@ except:
     print("tkinter.filedialog is required")
     exit()
 # Open the CSV
+print("Select the CSV file to open using the file browser")
 filecsv = Tk()
 filecsv.filename = filedialog.askopenfilename(initialdir = "~/",title = "Select csv file to open",filetypes = (("CSV files","*.csv"),("all files","*.*")))
 print ("Opening file " + filecsv.filename)
@@ -36,6 +37,7 @@ blueprint = cn + '.txt'
 directory = filedialog.askdirectory(title = "Select where to save")
 # Start work on the CSV file
 sep = '\n\n----\n\n'
+print("Select the folder to save files into using the file browser")
 with open(filecsv.filename, 'r') as f: # Open the file
     worklist = csv.DictReader(f)
     for row in worklist: # Turn each row into a Kirby content txt file
@@ -43,6 +45,7 @@ with open(filecsv.filename, 'r') as f: # Open the file
         try:
             title = row['title'] # title is the one heading that must be present
             filename = filesafe(title) + '/' + blueprint # Create a Kirby safe folder and use blueprint name
+            print('Creating ' + title + '.txt')
         except:
             print("No 'title' item found so stopping. 'title' must be a heading and written in lowercase for the conversion to work.")
             exit()
