@@ -2,8 +2,7 @@
 # Comma to Colon
 # A script to turn a CSV file into a Kirby CMS content file.
 # Try Kirby for free: https://getkirby.com/
-# If you feel like buying me a beer for writing the script tip me here:
-# https://www.paypal.me/mylesw42
+
 
 def filesafe(filename): # Create a Kirby safe filename
     safename = filename.replace(' ','-')

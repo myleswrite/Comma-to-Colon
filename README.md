@@ -13,3 +13,8 @@ If you're moving from A N Other CMS to Kirby you've probably got to transfer the
 + The first row of the CSV file is taken to be a header row for the columns. One of these headers must be 'title' (lower case) but the rest can be anythign you like.
 + The script will create YAML files using the cells in the header row to create the categories (ie the CSV header metadesc would become metadesc: in the YAML file.
 
+### Kirby licences
+
+Try Kirby for free: https://getkirby.com/ then buy a licence when you realise just how great a CMS it is.
+
+If you feel like buying me a beer for writing the script tip me here: https://www.paypal.me/mylesw42
