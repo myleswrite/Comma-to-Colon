@@ -10,6 +10,7 @@ def filesafe(filename): # Create a Kirby safe filename
     safename = safename.replace(',','-')
     safename = safename.replace('.','-')
     safename = safename.replace("'",'-')
+    safename = safename.replace("%",'-')
     safename = safename.lower()
     return safename
 
