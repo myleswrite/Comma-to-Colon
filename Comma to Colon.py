@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Comma to Colon
-# A script to turn a CSV file into a Kirby CMS content file.
+# A script to turn a CSV file into a folder of Kirby CMS content files.
 # Try Kirby for free: https://getkirby.com/
 
 
@@ -30,6 +30,7 @@ try: # For file dialog
 except:
     print("tkinter.filedialog is required")
     exit()
+
 # Open the CSV
 print("Select the CSV file to open using the file browser")
 filecsv = Tk()
@@ -52,7 +53,7 @@ with open(filecsv.filename, 'r') as f: # Open the file
         except:
             print("No 'title' item found so stopping. 'title' must be a heading and written in lowercase for the conversion to work.")
             exit()
-        for val,item in row.items():
+        for val,item in row.items(): # Go through each column of each row in the CSV to create a Kirby file.
             line += val + ': ' + item + sep
         fullfile = directory + '/' + filename
         os.makedirs(os.path.dirname(fullfile), exist_ok=True)
