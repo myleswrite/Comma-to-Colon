@@ -20,7 +20,7 @@ Several Python modules are required for the Comma to Colon:
 
 + CSV — For reading and writing CSV files
 + OS — For accessing the file system
-+ Tkinter — For file dialog boxes (you could rewrite the script to remove this one if you don't wnat to use Tkinter)
++ Tkinter — For file dialog boxes (you could rewrite the script to remove this one if you don't want to use Tkinter)
 
 ### Kirby licences
 
